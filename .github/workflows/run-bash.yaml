@@ -1,0 +1,22 @@
+name: Run a Bash script
+
+on:
+  push:
+    branches:
+      - develop
+
+jobs:
+  script-01:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./scripts
+    steps:
+      - name: Check out the repository to the runner
+        uses: actions/checkout@v4
+      - name: Make the script files executable
+        run: chmod +x sample-01.sh sample-02.sh
+      - name: Run script number 1
+        run: ./sample-01.sh
+      - name: Run script number 2
+        run: ./sample-02.sh

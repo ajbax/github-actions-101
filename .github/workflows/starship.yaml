@@ -1,26 +1,26 @@
-name: Simple Test Workflow
+name: Starship Rocket Test
 
 on:
   push:
     branches:
       - main
-  
+
   pull_request:
     branches:
       - main
-  
+
   Workflow_dispatch:
 
 jobs:
-  hello:
+  liftoff:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
       - name: Starship Liftoff
         run: echo "Starship lifting off..."
         shell: bash
-  
-  goodbye:
+
+  landing:
     runs-on: ubuntu-latest
     steps:
       - name: Starship landing
